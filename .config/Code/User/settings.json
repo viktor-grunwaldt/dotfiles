@@ -1,0 +1,34 @@
+{
+    "java.help.firstView": "gettingStarted",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.fontSize": 16,
+    "editor.tabSize": 3,
+    "files.autoSave": "afterDelay",
+    "C_Cpp.default.intelliSenseMode": "gcc-x64",
+    "C_Cpp.default.cppStandard": "c++17",
+    "C_Cpp.default.cStandard": "c11",
+    "c-cpp-compile-run.run-in-external-terminal": true,
+    "editor.insertSpaces": false,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "python.jediEnabled": false,
+    "workbench.colorTheme": "One Monokai",
+    "sync.gist": "8f4331d399c97be686fa6c8ee35235b0",
+    "editor.tabCompletion": "on",
+    "git.enabled": false,
+    "git.autofetch": false,
+    "python.autoComplete.extraPaths": ["./src"],
+    "bracket-pair-colorizer-2.colors": [
+        "White",
+        "LightGrey",
+        "Gold",
+        "Orchid",
+        "LightSkyBlue"
+    ],
+    "sync.forceDownload": false
+}
