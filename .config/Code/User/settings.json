@@ -2,7 +2,6 @@
     "java.help.firstView": "gettingStarted",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.fontSize": 16,
     "editor.tabSize": 3,
     "files.autoSave": "afterDelay",
     "C_Cpp.default.intelliSenseMode": "gcc-x64",
@@ -30,5 +29,21 @@
         "Orchid",
         "LightSkyBlue"
     ],
-    "sync.forceDownload": false
+    "sync.forceDownload": false,
+    "window.titleBarStyle": "custom",
+    "window.zoomLevel": 1,
+    // "java.home": "/usr/lib/jvm/java-14-openjdk/",
+    "java.semanticHighlighting.enabled": false,
+    "latex-workshop.message.update.show": false,
+    "java.project.referencedLibraries": [
+        "/home/vik77/Documents/code/java/lib/*.jar",
+        "./lib/**/*.jar"
+    ],
+    "python.languageServer": "Pylance",
+    "python.analysis.extraPaths": [
+        "./src"
+    ],
+    "[xml]": {
+        "editor.defaultFormatter": "mblode.pretty-formatter"
+    }
 }

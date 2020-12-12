@@ -1,5 +1,8 @@
 [General]
-history=dd:journalctl how to view log from last boot,kill man
+history=obs,dis,di,emoji,qbit,dd:!deepl enwurfsmuster,dd:!deepl zu Versteuerndes Einkommen,auda,dd:journalctl how to view log from last boot,kill man
+
+[PlasmaRunnerManager]
+LaunchCounts=2 shell_obs,1 services_applications:org.qbittorrent.qBittorrent.desktop,2 services_applications:org.kde.plasma.emojier.desktop,3 services_applications:discord.desktop
 
 [Plugins]
 CharacterRunnerEnabled=true
