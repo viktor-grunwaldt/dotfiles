@@ -5,8 +5,18 @@ DefaultProfile=Arc.profile
 Favorites=Arc.profile
 
 [MainWindow]
-Height 1080=995
+Height 1080=723
+RestorePositionForNextInstance=false
 State=AAAA/wAAAAD9AAAAAAAAB4AAAAO/AAAABAAAAAQAAAAIAAAACPwAAAAA
 ToolBarsMovable=Disabled
-Width 1920=1920
+Width 1920=822
 Window-Maximized 1080x1920=true
+eDP HDMI-A-0 Height 1080=1043
+eDP HDMI-A-0 Width 1920=960
+eDP HDMI-A-0 XPosition=0
+eDP HDMI-A-0 YPosition=37
+eDP Height 1080=995
+eDP Width 1920=1920
+eDP Window-Maximized 1080x1920=true
+eDP XPosition=0
+eDP YPosition=37
