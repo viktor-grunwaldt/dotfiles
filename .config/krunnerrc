@@ -1,8 +1,8 @@
 [General]
-history=obs,dis,di,emoji,qbit,dd:!deepl enwurfsmuster,dd:!deepl zu Versteuerndes Einkommen,auda,dd:journalctl how to view log from last boot,kill man
+history=dis,plot y=x+1,p,wa: intergrate 2^x,dd:!deepl enwurfsmuster,obs,di,emoji,qbit,dd:!deepl zu Versteuerndes Einkommen,auda,dd:journalctl how to view log from last boot,kill man
 
 [PlasmaRunnerManager]
-LaunchCounts=2 shell_obs,1 services_applications:org.qbittorrent.qBittorrent.desktop,2 services_applications:org.kde.plasma.emojier.desktop,3 services_applications:discord.desktop
+LaunchCounts=1 webshortcuts_WebShortcut:dd,1 services_applications:org.kde.partitionmanager.desktop,4 services_applications:discord.desktop,2 webshortcuts_WebShortcut:wa,2 shell_obs,2 services_applications:org.kde.plasma.emojier.desktop,1 krunner_appstream_org.kde.kstars.desktop,1 services_applications:org.qbittorrent.qBittorrent.desktop
 
 [Plugins]
 CharacterRunnerEnabled=true
