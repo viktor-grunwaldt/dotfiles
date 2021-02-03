@@ -1,9 +1,0 @@
-[user]
-	name = Viktor Grünwaldt
-	email = vik777gru@gmail.com
-[pull]
-	rebase = false
-[color]
-	ui = auto
-[core]
-	autocrlf = input
