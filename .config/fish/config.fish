@@ -1,57 +1,52 @@
-abbr p sudo pacman -S
-
 alias ls=exa
 abbr p sudo pacman -S
 abbr c clear
 alias config='/usr/bin/git --git-dir=/home/vik77/.cfg/ --work-tree=/home/vik77'
 
 # tj git aliases
-abbr -a gd "git diff -M"
-abbr -a ga "git add"
-abbr -a gaa "git add --all ."
-abbr -a gbd "git branch -D"
-abbr -a gs "git status"
-abbr -a gca "git commit -a -m"
-abbr -a gm "git merge --no-ff"
-abbr -a gpt "git push --tags"
-abbr -a gp "git push"
-abbr -a grh "git reset --hard"
-abbr -a gb "git branch"
-abbr -a gcob "git checkout -b"
-abbr -a gco "git checkout"
-abbr -a gba "git branch -a"
-abbr -a gcp "git cherry-pick"
-abbr -a gl "git log --pretty=format:\"%Cgreen%h%Creset - %Cblue%an%Creset @ %ar : %s\""
-abbr -a gl2 "git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
-abbr -a glv "git log --stat"
-abbr -a gpom "git pull origin master"
-abbr -a gcd='cd "`git rev-parse --show-toplevel`"'
+abbr gd "git diff -M"
+abbr ga "git add"
+abbr gaa "git add --all ."
+abbr gbd "git branch -D"
+abbr gs "git status"
+abbr gca "git commit -a -m"
+abbr gm "git merge --no-ff"
+abbr gpt "git push --tags"
+abbr gp "git push"
+abbr grh "git reset --hard"
+abbr gb "git branch"
+abbr gcob "git checkout -b"
+abbr co "git checkout"
+abbr gba "git branch -a"
+abbr gcp "git cherry-pick"
+abbr gl "git log --pretty=format:\"%Cgreen%h%Creset - %Cblue%an%Creset @ %ar : %s\""
+abbr gl2 "git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
+abbr glv "git log --stat"
+abbr gpom "git pull origin master"
 
 # my aliases
 # remove files that are not under version control
-abbr -a gcf "git clean -fd"
+abbr gcf "git clean -fd"
 # discard changes in the working directory
-abbr -a gcod "git checkout -- ."
+abbr gcod "git checkout -- ."
 # grab the latest upstream version
-abbr -a gpum "git pull upstream master"
+abbr gpum "git pull upstream master"
 # delete branch from github. follow with branch name
-abbr -a gpod "git push origin --delete"
+abbr gpod "git push origin --delete"
 # show git status without untracked files
-abbr -a gsu "git status -uno"
+abbr  gsu "git status -uno"
 # commit -m
-abbr -a gcm "git commit -m"
-abbr -a gcv "git commit --verbose"
-abbr -a gc "git commit --verbose"
-# diff in sublime
-abbr -a gds "git diff | sublime"
+abbr gcm "git commit -m"
+abbr gcv "git commit --verbose"
+abbr gc "git commit --verbose"
 # remove staged file
-abbr -a grm "git reset HEAD"
+abbr grm "git reset HEAD"
 # add current files, commit those file
-abbr -a gacm "git add . --all; git commit --verbose"
+abbr gacm "git add . --all; git commit --verbose"
 # list the git tags by date
-abbr -a gtd "git log --tags --simplify-by-decoration --pretty=\"format:%ai %d\""
+abbr gtd "git log --tags --simplify-by-decoration --pretty=\"format:%ai %d\""
 # list stats for the repo
-abbr -a grs "git shortlog -s -n --all --no-merges"
+abbr grs "git shortlog -s -n --all --no-merges"
 
 function repo-url -d "Open the current repo and branch on the website"
   set url (git config --get remote.origin.url | sed 's/:/\//' | sed 's/git@/https:\/\//' | sed 's/\.git//')
@@ -63,3 +58,4 @@ function repo-url -d "Open the current repo and branch on the website"
       echo "$url/tree/$branch"
   end
 end
+
