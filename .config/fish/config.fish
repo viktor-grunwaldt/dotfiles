@@ -59,3 +59,5 @@ function repo-url -d "Open the current repo and branch on the website"
   end
 end
 
+set -xg ELEM  "/run/media/vik77/Elements"
+set -xg VISUAL "nvim"
