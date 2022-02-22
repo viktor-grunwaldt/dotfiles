@@ -136,4 +136,10 @@ ex ()
   else
     echo "'$1' is not a valid file"
   fi
-}
+man () 
+{
+    local width=$(tput cols)
+    [ $width -gt $MANWIDTH ] && width=$MANWIDTH
+    env MANWIDTH=$width \
+    man "$@"
+}}
