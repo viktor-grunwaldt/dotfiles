@@ -7,3 +7,5 @@
 	ui = auto
 [core]
 	autocrlf = input
+[init]
+	defaultBranch = master
