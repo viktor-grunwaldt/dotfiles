@@ -2,6 +2,8 @@ alias ls=exa
 abbr p sudo pacman -S
 abbr c clear
 alias config='/usr/bin/git --git-dir=/home/vik77/.cfg/ --work-tree=/home/vik77'
+# adds pip installed modules into path
+fish_add_path -p "$HOME/.local/bin"
 
 # tj git aliases
 abbr gd "git diff -M"
@@ -61,3 +63,6 @@ end
 
 set -xg ELEM  "/run/media/vik77/Elements"
 set -xg VISUAL "nvim"
+set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+set -xg UWR "$HOME/Documents/uwr"
+
