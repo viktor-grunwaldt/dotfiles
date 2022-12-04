@@ -1,7 +1,6 @@
 alias ls=exa
 abbr p sudo pacman -S
 abbr c clear
-alias config='/usr/bin/git --git-dir=/home/vik77/.cfg/ --work-tree=/home/vik77'
 # adds pip installed modules into path
 fish_add_path -p "$HOME/.local/bin"
 
@@ -26,7 +25,6 @@ abbr gl2 "git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 abbr glv "git log --stat"
 abbr gpom "git pull origin master"
 
-# my aliases
 # remove files that are not under version control
 abbr gcf "git clean -fd"
 # discard changes in the working directory
