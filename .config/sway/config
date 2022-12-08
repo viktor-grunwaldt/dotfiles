@@ -71,7 +71,12 @@ input * {
 
     # Exit sway (logs you out of your Wayland session)
     # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-	bindsym $mod+Shift+e exec ~/.config/sway/swaypoweroff.sh
+    bindsym $mod+Shift+e exec ~/.config/sway/swaypoweroff.sh
+
+    # Bind pipewire volume controls through pw-volume
+    bindsym XF86AudioRaiseVolume exec "pw-volume change +2.5%; pkill -RTMIN+8 waybar"
+    bindsym XF86AudioLowerVolume exec "pw-volume change -2.5%; pkill -RTMIN+8 waybar"
+    bindsym XF86AudioMute exec "pw-volume mute toggle; pkill -RTMIN+8 waybar
 #
 # Moving around:
 #
@@ -192,8 +197,28 @@ bar {
 include /etc/sway/config.d/*
 default_border pixel
 client.focused #cba6f7 #cba6f7 #000000 #cba6f7
-gaps inner 8
+gaps inner 4
 exec wl-clipboard
 exec mako
-exec autotiling
+exec autotiling-rs
 exec blueman-applet
+
+# exec_always {
+#   gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Darker'
+#   gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
+#   gsettings set org.gnome.desktop.interface cursor-theme 'Breeze'
+#   gsettings set org.gnome.desktop.interface font-name 'Roboto Slab 10'
+#}
+# stuff to consider when using sway:
+# in order for some apps to go into dark mode create/add
+# [Settings]
+# gtk-application-prefer-dark-theme=true
+# gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Darker'  
+# gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark' 
+# to ~/.config/gtk-3.0/settings.ini
+#
+# as for some other apps "use qt5ct"
+
+# cursor
+seat seat0 xcursor_theme Breeze_Snow 
+

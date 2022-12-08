@@ -1,8 +1,9 @@
+@import "mocha.css";
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     /* font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
     font-family: "Hack", "Font Awesome 5 Free"; /*Inter, 'Victor Mono', 'Fira Code', sans-serif;*/
-    font-size: 13px;
+    font-size: 14px;
 }
 
 .modules-right {
@@ -86,7 +87,7 @@ window#waybar.chromium {
 #temperature,
 #backlight,
 #network,
-#pulseaudio,
+#custom-pipewire,
 #custom-media,
 #tray,
 #mode,
@@ -149,11 +150,12 @@ label:focus {
 
 #cpu {
     background-color: #2ecc71;
-    color: #000000;
+/*    color: #000000;*/
 }
 
 #memory {
     background-color: #9b59b6;
+    color: #080808;
 }
 
 #disk {
@@ -172,12 +174,12 @@ label:focus {
     background-color: #585b70;
 }
 
-#pulseaudio {
+#custom-pipewire {
     background-color: #a6e3a1;
     color: #4c4f69;
 }
 
-#pulseaudio.muted {
+#custom-pipewire.muted {
     background-color: #90b1b1;
     color: #2a5c45;
 }

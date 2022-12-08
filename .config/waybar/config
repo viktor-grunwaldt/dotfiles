@@ -3,24 +3,53 @@
     "position": "top",
     "modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
     "modules-center": [""],
-    "modules-right": ["tray", "battery", "network", "clock", "pulseaudio"],
-    "height": 32,
+    "modules-right": [
+    		"tray", 
+		"custom/pipewire",
+		"network",
+		"cpu",
+		"memory",
+		"battery",
+		"clock",
+	],
+    "height": 42,
     "sway/window": {
         "max-length": 50
     },
     "network": {
-		"format-wifi": "{essid} ({signalStrength}%) {icon}",
-		"format-ethernet": "{ifname}",
-		"format-disconnected": "",
-		"max-length": 50,
-		"on-click": "alacritty -e 'nmtui'",
-		"format-icons": ["󰤯","󰤟", "󰤢", "󰤥", "󰤨"]
-	},
+	"format-wifi": " {essid} ({signalStrength}%)",
+	"format-ethernet": "{ifname}",
+	"format-disconnected": "",
+	"max-length": 50,
+	"on-click": "alacritty -e 'nmtui'",
+    },
+    "cpu": {
+        "format": " {usage}%",
+        "tooltip": false
+    },
+    "memory": {
+        "format": " {}%"
+    },
     "battery": {
-        "format": "{capacity}% {icon}",
-        "format-icons":["", "", "", "", ""]
+        "format": "{icon} {capacity}%",
+        "format-icons":{
+		"default": [" ", " ", " ", " ", " "],
+	    	"charging": "⚡"
+	}
     },
     "clock": {
-        "format-alt": "{:%a, %d. %b  %H:%M}"
+        "format": "{:%a, %d. %b  %H:%M}"
+    },
+    "custom/pipewire": {
+	"exec": "pw-volume status",
+        "return-type": "json",
+        "interval": "once",
+	"format": "{icon}", 
+        "signal": 8,
+        "format-icons": {
+		"mute": "ﱝ",
+		"default": ["", "", ""]
+        },
+
     }
 }
