@@ -1,3 +1,3 @@
 function pacman-autoremove
-	paru -Rs (paru -Qtdq)
+	paru -Rns (paru -Qtdq)
 end

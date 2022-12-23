@@ -38,13 +38,13 @@
 	}
     },
     "clock": {
-        "format": "{:%a, %d. %b  %H:%M}"
+        "format": "{:%a, %d.%m  %H:%M}"
     },
     "custom/pipewire": {
 	"exec": "pw-volume status",
         "return-type": "json",
         "interval": "once",
-	"format": "{icon}", 
+	"format": "{icon} {percentage}%", 
         "signal": 8,
         "format-icons": {
 		"mute": "ﱝ",

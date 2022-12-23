@@ -1,3 +1,4 @@
+# vim:filetype=i3
 # Default config for sway
 #
 # Copy this to ~/.config/sway/config and edit it to your liking.
@@ -17,18 +18,18 @@ set $menu wofi --show drun | xargs swaymsg exec --
 output * bg /home/vi/Pictures/sonny/Sonny_boy_\(54\).png fill
 
 ### Idle configuration
-#
+
 # Example configuration:
-#
-# exec swayidle -w \
-#          timeout 300 'swaylock -f -c 000000' \
-#          timeout 600 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#          before-sleep 'swaylock -f -c 000000'
-#
+
+exec swayidle -w \
+      timeout 900 'swaylock' \
+      timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+      before-sleep 'swaylock'
+
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
-
+# bindsym $mod+l $lock
 ### Input configuration
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
@@ -45,7 +46,7 @@ input * {
     # Start a terminal
     bindsym $mod+Return exec $term
 
-	# Open this file in Alacritty+Micro
+	# Open this file in Alacritty+vim
 	bindsym $mod+shift+s exec "alacritty -e nvim /home/vi/.config/sway/config"
 
     # Kill focused window
@@ -74,9 +75,17 @@ input * {
     bindsym $mod+Shift+e exec ~/.config/sway/swaypoweroff.sh
 
     # Bind pipewire volume controls through pw-volume
-    bindsym XF86AudioRaiseVolume exec "pw-volume change +2.5%; pkill -RTMIN+8 waybar"
-    bindsym XF86AudioLowerVolume exec "pw-volume change -2.5%; pkill -RTMIN+8 waybar"
+    bindsym XF86AudioRaiseVolume exec "pw-volume change +5%; pkill -RTMIN+8 waybar"
+    bindsym XF86AudioLowerVolume exec "pw-volume change -5%; pkill -RTMIN+8 waybar"
     bindsym XF86AudioMute exec "pw-volume mute toggle; pkill -RTMIN+8 waybar
+
+    # bind brightness control
+	bindsym --locked XF86MonBrightnessUp exec light -T 1.4
+	bindsym --locked XF86MonBrightnessDown exec light -T 0.72
+
+    #bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
+    #bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
+
 #
 # Moving around:
 #
@@ -197,11 +206,27 @@ bar {
 include /etc/sway/config.d/*
 default_border pixel
 client.focused #cba6f7 #cba6f7 #000000 #cba6f7
-gaps inner 4
+gaps outer 3
+gaps inner 3
 exec wl-clipboard
 exec mako
 exec autotiling-rs
-exec blueman-applet
+# exec blueman-applet
+
+# Porting GTK settings, Qt is handled by qt6ct
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+    gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Mauve-Dark'
+    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+    gsettings set $gnome-schema cursor-theme 'Breeze_Snow'
+    gsettings set $gnome-schema cursor-size 24
+    gsettings set $gnome-schema font-antialiasing 'rgba'
+    gsettings set $gnome-schema font-hinting 'full'
+    gsettings set $gnome-schema font-rgba-order 'rgb'
+	gsettings set $gnome-schema color-scheme 'prefer-dark'
+}
+
+exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
 # exec_always {
 #   gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Darker'
