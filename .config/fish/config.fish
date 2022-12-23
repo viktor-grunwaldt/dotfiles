@@ -1,4 +1,4 @@
-alias ls=exa
+# alias ls=exa
 abbr p sudo pacman -S
 abbr c clear
 # adds pip installed modules into path
@@ -24,6 +24,8 @@ abbr gl "git log --pretty=format:\"%Cgreen%h%Creset - %Cblue%an%Creset @ %ar : %
 abbr gl2 "git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 abbr glv "git log --stat"
 abbr gpom "git pull origin master"
+abbr gcl "git clone"
+abbr gclp "git clone (wl-paste)"
 
 # remove files that are not under version control
 abbr gcf "git clean -fd"
@@ -59,8 +61,8 @@ function repo-url -d "Open the current repo and branch on the website"
   end
 end
 
-set -xg ELEM  "/run/media/vik77/Elements"
-set -xg VISUAL "nvim"
-set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-set -xg UWR "$HOME/Documents/uwr"
-
+# set -xg ELEM  "/run/media/vik77/Elements"
+# set -xg VISUAL "nvim"
+# set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
+# set -xg UWR "$HOME/Documents/uwr"
+# source /usr/share/doc/find-the-command/ftc.fish
