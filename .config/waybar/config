@@ -1,6 +1,6 @@
 {
     "layer": "top",
-    "position": "top",
+    "position": "bottom",
     "modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
     "modules-center": [""],
     "modules-right": [
@@ -10,18 +10,19 @@
 		"cpu",
 		"memory",
 		"battery",
-		"clock",
+		"clock#date",
+		"clock#time",
 	],
-    "height": 42,
+    
     "sway/window": {
-        "max-length": 50
+    "max-length": 50
     },
     "network": {
-	"format-wifi": " {essid} ({signalStrength}%)",
+	"format-wifi": "  {essid} ({signalStrength}%)",
 	"format-ethernet": "{ifname}",
 	"format-disconnected": "",
 	"max-length": 50,
-	"on-click": "alacritty -e 'nmtui'",
+	"on-click": "$HOME/.config/sway/wifi/nmcli-wofi",
     },
     "cpu": {
         "format": " {usage}%",
@@ -34,12 +35,15 @@
         "format": "{icon} {capacity}%",
         "format-icons":{
 		"default": [" ", " ", " ", " ", " "],
-	    	"charging": "⚡"
+	    "charging": "⚡"
 	}
     },
-    "clock": {
-        "format": "{:%a, %d.%m  %H:%M}"
+    "clock#date": {
+        "format": "{:%d.%m}"
     },
+	"clock#time": {
+		"format":"{:%H:%M}"
+	},
     "custom/pipewire": {
 	"exec": "pw-volume status",
         "return-type": "json",

@@ -1,0 +1,81 @@
+#!/bin/env bash
+#
+# Script name: wofi-web
+# Description: Search your firefox history.
+# Dependencies: wofi, firefox
+# GitLab: https://www.gitlab.com/dwt1/dmscripts
+# License: https://www.gitlab.com/dwt1/dmscripts/LICENSE
+# Contributors: Derek Taylor
+#               Simon Ingelsson
+#               ME!
+
+set -euo pipefail
+
+_cache_dir="${HOME}/.cache/wofi-web"
+_cache_file="${_cache_dir}/cache"
+mkdir -p "${_cache_dir}"
+# TODO: support bookmark files
+_bookmark_file=0
+_wofi_config_path="${HOME}/scripts/config.wofi"
+# Do query against sqlite3 database expecting three columns (browsername, title, url)
+# ARGS: "file" "query" "browser"
+function cacheHistory() {
+  local _file=${1}
+  local _query=${2}
+  # shellcheck disable=SC2154
+  browser=${3-} || browser=""
+  [[ -f "${_file}" ]] || return
+  sqlite3 -separator ' | ' "${_file}" "${_query}" > "${_cache_dir}/${browser}.data"
+}
+
+# Wrap getting history so we can call it only if the cache is old
+# TODO: implement 
+generateHistory() {
+  if [[ -f "${_cache_file}" ]]; then
+    [[ $(pidof firefox) ]] && return 0
+
+    # check if cache age is less than 3 mins
+    local file_time=$(date +%s -r "${_cache_file}")
+    local time_delta=$(($(date +%s) - ${file_time}))
+    [[ ${time_delta} -lt 180 ]] && return 0
+  fi
+  # Make sure cache is empty and exists
+  echo -n "" > "${_cache_file}"
+  echo -n "" > "${_cache_file}.sorted"
+
+  if [[ -d "${HOME}/.mozilla/firefox" ]]; then 
+    SQL="PRAGMA encoding='UTF-8'; select p.title,p.url from moz_historyvisits as h, moz_places as p where p.id == h.place_id order by url"
+    cd "${HOME}/.mozilla/firefox"
+    for db in */places.sqlite; do
+      DB=$(realpath "${db}")
+      cacheHistory "${DB}" "${SQL}" "firefox"
+    done
+  fi
+
+  # Merge .data-files
+  find "${_cache_dir}" -iname "*.data" -print0 | xargs -0 cat > "${_cache_file}"
+
+  # reverse each line and then sorting on url making sure they are unique then restoring the lines
+  rev "${_cache_file}" | sort -u -t' ' -r -k1,1 |rev | sort  > "${_cache_file}.sorted"
+}
+
+main() {
+  local list=""
+  # History list is formed by using grep "http" from the history table.
+  generateHistory
+  histlist=$(cat "${_cache_file}.sorted")
+  if [[ -f ${_bookmark_file} ]]; then
+    local bmlist='' 
+    bmlist=$(awk '{print $2" - "$1}' "${_bookmark_file}")
+    [[ -n "${bmlist}" ]] && list="$(printf '%s\n' "${list}" "${bmlist}" "${_bookman_separator}")"
+  fi
+
+  # Piping the lists into dmenu.
+  # We use "printf '%s\n'" to format the array one item to a line.
+  # The URLs are listed quickmarks, bookmarks and lastly history
+  local choice=
+  choice=$( printf '%s\n' "${list}" "${histlist}" | sed '/^[[:space:]]*$/d' | wofi --width 800 --lines 12 --allow-images false --show dmenu "open:" "$@" )
+}
+
+
+[[ "${BASH_SOURCE[0]}" == "${0}" ]] && main "$@"

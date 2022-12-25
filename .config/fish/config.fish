@@ -66,3 +66,5 @@ end
 # set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 # set -xg UWR "$HOME/Documents/uwr"
 # source /usr/share/doc/find-the-command/ftc.fish
+
+thefuck --alias | source

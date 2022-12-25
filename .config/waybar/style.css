@@ -2,25 +2,33 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     /* font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
-    font-family: "Hack", "Font Awesome 5 Free"; /*Inter, 'Victor Mono', 'Fira Code', sans-serif;*/
-    font-size: 14px;
+    font-family: "Hack Nerd Font", "Roboto"; 
+    font-size: 16px;
 }
-
+.modules-left {
+	margin: 4px;
+	padding: 4px;
+	background-color: @surface0; 
+	border-radius: 2rem;
+}
 .modules-right {
 	margin: 4px;
 	padding: 3px;
-	background-color: #313244;
+	background-color: @surface0; 
 	border-radius: 2rem;
 }
 
 window#waybar {
     /* background-color: #313244; old */
-    /* background-color: #1e1e2e; */
+    /*background-color: @base;*/
     background-color: transparent;
-    color: #ffffff;
     transition-property: background-color;
     transition-duration: .5s;
+	border: none;
 }
+/*.window:empty {
+	display:none;
+}*/
 
 window#waybar.hidden {
     opacity: 0.2;
@@ -35,34 +43,29 @@ window#waybar.solo {
 }
 */
 
-window#waybar.termite {
-    background-color: #3F3F3F;
-}
-
-window#waybar.chromium {
-    background-color: #000000;
+window#waybar.firefox {
+    background-color: @base;
     border: none;
 }
 
 #workspaces {
-	margin: 4px;
-	padding: 3px;
-	background-color: #313244;
+	/*margin: 4px;
+	padding: 3px;*/
+	background-color: @surface1;
 	border-radius: 2rem;
 }
 
 #workspaces button {
 	padding: 0px;
 	margin: 2px;
-    /* background-color: transparent; */
-    background-color: #45475a;
-    color: #cdd6f4;
+    /* background-color: transrarent; */
+    color: @text;
     border-radius: 2rem;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 #workspaces button:hover {
-    background: #585b70;
+    background: @surface2;
 }
 
 #workspaces button.focused {
@@ -71,11 +74,11 @@ window#waybar.chromium {
 }
 
 #workspaces button.urgent {
-    background-color: #f38ba8;
+    background-color: @red;
 }
 
 #mode {
-    background-color: #f38ba8;
+    background-color: @red;
     /* border-bottom: 3px solid #ffffff; */
 }
 
@@ -101,30 +104,29 @@ window#waybar.chromium {
 }
 
 #window {
-    margin: 4px;
-    background-color: #313244;
     border-radius: 2rem;
-    padding-left: 8px;
-    padding-right: 8px;
+    margin-left: 4px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: @surface1;
     /* padding: 0 6px; */
 }
+
 
 window#waybar.empty #window {
 	background-color: transparent;
 }
 
 #clock {
-    background-color: #eba0ac;
+    background-color: @maroon;
 }
 
 #battery {
-    background-color: #fab387;
-    color: #45475a;
+    background-color: @peach;
 }
 
 #battery.charging, #battery.plugged {
-    color: #45475a;
-    background-color: #a6e3a1;
+    background-color: @yellow;
 }
 
 @keyframes blink {
@@ -136,7 +138,7 @@ window#waybar.empty #window {
 
 #battery.critical:not(.charging) {
     background-color: #f53c3c;
-    color: #ffffff;
+    color: @text;
     animation-name: blink;
     animation-duration: 0.5s;
     animation-timing-function: linear;
@@ -155,7 +157,7 @@ label:focus {
 
 #memory {
     background-color: #9b59b6;
-    color: #080808;
+    color: @crust;
 }
 
 #disk {
@@ -167,21 +169,19 @@ label:focus {
 }
 
 #network {
-    background-color: #74c7ec;
+    background-color: @sapphire;
 }
 
 #network.disconnected {
-    background-color: #585b70;
+    background-color: @sky;
 }
 
 #custom-pipewire {
-    background-color: #a6e3a1;
-    color: #4c4f69;
+    background-color: @green;
 }
 
 #custom-pipewire.muted {
     background-color: #90b1b1;
-    color: #2a5c45;
 }
 
 #custom-media {
@@ -194,12 +194,12 @@ label:focus {
     background-color: #66cc99;
 }
 
-#custom-media.custom-vlc {
+#custom-media.custom-mpv {
     background-color: #ffa000;
 }
 
 #temperature {
-    background-color: #f0932b;
+    background-color: @pink;
 }
 
 #temperature.critical {
@@ -208,7 +208,7 @@ label:focus {
 
 #tray {
     /* background-color: #a6e3a1; */
-    background-color: #45475a;
+    background-color: @surface1;
 }
 
 #tray > .passive {
