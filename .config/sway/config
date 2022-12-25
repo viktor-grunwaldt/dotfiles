@@ -29,15 +29,20 @@ exec swayidle -w \
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
-# bindsym $mod+l $lock
 ### Input configuration
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
+
 
 input * {
 	xkb_layout "pl"
 	accel_profile flat
 }
+
+# I want my gaming mouse profile to be flat, however TrackPoint and TouchPad are terrible if flat
+
+input 2:10:TPPS/2_IBM_TrackPoint accel_profile adaptive
+input 1739:0:Synaptics_TM3276-022 accel_profile adaptive
 
 ### Key bindings
 #
@@ -71,7 +76,6 @@ input * {
     bindsym $mod+Shift+c reload
 
     # Exit sway (logs you out of your Wayland session)
-    # bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
     bindsym $mod+Shift+e exec ~/.config/sway/swaypoweroff.sh
 
     # Bind pipewire volume controls through pw-volume
@@ -79,9 +83,9 @@ input * {
     bindsym XF86AudioLowerVolume exec "pw-volume change -5%; pkill -RTMIN+8 waybar"
     bindsym XF86AudioMute exec "pw-volume mute toggle; pkill -RTMIN+8 waybar
 
-    # bind brightness control
-	bindsym --locked XF86MonBrightnessUp exec light -T 1.4
-	bindsym --locked XF86MonBrightnessDown exec light -T 0.72
+    # bind brightness control to move up/down by a factor of 2^(1/4) 
+	bindsym --locked XF86MonBrightnessUp exec light -T 1.19 
+	bindsym --locked XF86MonBrightnessDown exec light -T 0.84
 
     #bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
     #bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
@@ -120,10 +124,6 @@ input * {
     bindsym $mod+4 workspace number 4
     bindsym $mod+5 workspace number 5
     bindsym $mod+6 workspace number 6
-    bindsym $mod+7 workspace number 7
-    bindsym $mod+8 workspace number 8
-    bindsym $mod+9 workspace number 9
-    bindsym $mod+0 workspace number 10
     # Move focused container to workspace and switch to workspace
     bindsym $mod+Shift+1 move container to workspace number 1 
     bindsym $mod+Shift+2 move container to workspace number 2
@@ -131,10 +131,6 @@ input * {
     bindsym $mod+Shift+4 move container to workspace number 4
     bindsym $mod+Shift+5 move container to workspace number 5
     bindsym $mod+Shift+6 move container to workspace number 6
-    bindsym $mod+Shift+7 move container to workspace number 7
-    bindsym $mod+Shift+8 move container to workspace number 8
-    bindsym $mod+Shift+9 move container to workspace number 9
-    bindsym $mod+Shift+0 move container to workspace number 10
 #
 # Layout stuff:
 #
@@ -206,8 +202,11 @@ bar {
 include /etc/sway/config.d/*
 default_border pixel
 client.focused #cba6f7 #cba6f7 #000000 #cba6f7
-gaps outer 3
-gaps inner 3
+gaps outer 0
+gaps inner 4
+smart_gaps on
+font Hack Nerd Font
+
 exec wl-clipboard
 exec mako
 exec autotiling-rs
