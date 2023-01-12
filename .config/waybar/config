@@ -4,7 +4,7 @@
     "modules-left": ["sway/workspaces", "sway/window", "sway/mode"],
     "modules-center": [""],
     "modules-right": [
-    		"tray", 
+		"tray", 
 		"custom/pipewire",
 		"network",
 		"cpu",
@@ -22,7 +22,7 @@
 	"format-ethernet": "{ifname}",
 	"format-disconnected": "",
 	"max-length": 50,
-	"on-click": "$HOME/.config/sway/wifi/nmcli-wofi",
+	"on-click": "exec alacritty -e nmtui",
     },
     "cpu": {
         "format": " {usage}%",
