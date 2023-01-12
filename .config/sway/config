@@ -205,25 +205,26 @@ client.focused #cba6f7 #cba6f7 #000000 #cba6f7
 gaps outer 0
 gaps inner 4
 smart_gaps on
-font Hack Nerd Font
+font Hack 13 
 
 exec wl-clipboard
 exec mako
 exec autotiling-rs
 # exec blueman-applet
 
-# Porting GTK settings, Qt is handled by qt6ct
-set $gnome-schema org.gnome.desktop.interface
-exec_always {
-    gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Mauve-Dark'
-    gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-    gsettings set $gnome-schema cursor-theme 'Breeze_Snow'
-    gsettings set $gnome-schema cursor-size 24
-    gsettings set $gnome-schema font-antialiasing 'rgba'
-    gsettings set $gnome-schema font-hinting 'full'
-    gsettings set $gnome-schema font-rgba-order 'rgb'
-	gsettings set $gnome-schema color-scheme 'prefer-dark'
-}
+exec_always  ~/.config/sway/import_gtk-settings
+# Porting GTK settings, Qt is handled by qt5ct
+# set $gnome-schema org.gnome.desktop.interface
+# exec_always {
+#     gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Mauve-Dark'
+#     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
+#     gsettings set $gnome-schema cursor-theme 'Breeze_Snow'
+#     gsettings set $gnome-schema cursor-size 24
+#     gsettings set $gnome-schema font-antialiasing 'rgba'
+#     gsettings set $gnome-schema font-hinting 'full'
+#     gsettings set $gnome-schema font-rgba-order 'rgb'
+# 	gsettings set $gnome-schema color-scheme 'prefer-dark'
+# }
 
 exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 
