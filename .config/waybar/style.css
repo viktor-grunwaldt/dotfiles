@@ -1,21 +1,24 @@
-@import "mocha.css";
+@import "macchiato.css";
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     /* font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
-    font-family: "Hack Nerd Font", "Roboto"; 
+    font-family: "Hack Nerd Font", "Roboto";
     font-size: 16px;
 }
+
 .modules-left {
-	margin: 4px;
-	padding: 4px;
-	background-color: @surface0; 
-	border-radius: 2rem;
+    margin: 4px;
+    padding: 4px;
+    background-color: @surface0;
+    border-radius: 2rem;
 }
+
 .modules-right {
-	margin: 4px;
-	padding: 3px;
-	background-color: @surface0; 
-	border-radius: 2rem;
+    margin: 4px;
+    padding: 3px;
+    background-color: @surface0;
+    border-radius: 2rem;
 }
 
 window#waybar {
@@ -24,8 +27,9 @@ window#waybar {
     background-color: transparent;
     transition-property: background-color;
     transition-duration: .5s;
-	border: none;
+    border: none;
 }
+
 /*.window:empty {
 	display:none;
 }*/
@@ -49,15 +53,15 @@ window#waybar.firefox {
 }
 
 #workspaces {
-	/*margin: 4px;
+    /*margin: 4px;
 	padding: 3px;*/
-	background-color: @surface1;
-	border-radius: 2rem;
+    background-color: @surface1;
+    border-radius: 2rem;
 }
 
 #workspaces button {
-	padding: 0px;
-	margin: 2px;
+    padding: 0px;
+    margin: 2px;
     /* background-color: transrarent; */
     color: @text;
     border-radius: 2rem;
@@ -96,10 +100,10 @@ window#waybar.firefox {
 #mode,
 #idle_inhibitor,
 #mpd {
-	border-radius: 2rem;
-	padding-left: 8px;
-	padding-right: 8px;
-	margin: 2px;
+    border-radius: 2rem;
+    padding-left: 8px;
+    padding-right: 8px;
+    margin: 2px;
     color: #4c4f69;
 }
 
@@ -114,7 +118,7 @@ window#waybar.firefox {
 
 
 window#waybar.empty #window {
-	background-color: transparent;
+    background-color: transparent;
 }
 
 #clock {
@@ -125,7 +129,8 @@ window#waybar.empty #window {
     background-color: @peach;
 }
 
-#battery.charging, #battery.plugged {
+#battery.charging,
+#battery.plugged {
     background-color: @yellow;
 }
 
@@ -152,7 +157,7 @@ label:focus {
 
 #cpu {
     background-color: #2ecc71;
-/*    color: #000000;*/
+    /*    color: #000000;*/
 }
 
 #memory {
@@ -211,11 +216,11 @@ label:focus {
     background-color: @surface1;
 }
 
-#tray > .passive {
+#tray>.passive {
     -gtk-icon-effect: dim;
 }
 
-#tray > .needs-attention {
+#tray>.needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #eb4d4b;
 }
@@ -262,10 +267,10 @@ label:focus {
     min-width: 16px;
 }
 
-#keyboard-state > label {
+#keyboard-state>label {
     padding: 0 5px;
 }
 
-#keyboard-state > label.locked {
+#keyboard-state>label.locked {
     background: rgba(0, 0, 0, 0.2);
 }
