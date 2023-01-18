@@ -1,3 +1,7 @@
+/*
+ * https://github.com/catppuccin/palette/blob/main/css/catppuccin.css
+ * grep \# cat.css | grep iato | sed -e "s/^.*o-/@define-color /g" | sed -e "s/: /\t/g" > macchiato.css 
+ */
 @define-color rosewater	#f4dbd6;
 @define-color flamingo	#f0c6c6;
 @define-color pink	    #f5bde6;

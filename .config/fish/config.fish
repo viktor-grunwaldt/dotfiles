@@ -49,6 +49,9 @@ abbr gacm "git add . --all; git commit --verbose"
 abbr gtd "git log --tags --simplify-by-decoration --pretty=\"format:%ai %d\""
 # list stats for the repo
 abbr grs "git shortlog -s -n --all --no-merges"
+# print sorted, human readable sizes of current directory
+abbr ls_size "du -xhla --max-depth 1 | sort -rh"
+abbr z zathura
 
 function repo-url -d "Open the current repo and branch on the website"
   set url (git config --get remote.origin.url | sed 's/:/\//' | sed 's/git@/https:\/\//' | sed 's/\.git//')

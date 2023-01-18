@@ -12,6 +12,7 @@ set $down j
 set $up k
 set $right l
 set $term alacritty
+set $browser firefox
 set $menu wofi --show drun | xargs swaymsg exec --
 
 ### Output configuration
@@ -21,10 +22,10 @@ output * bg /home/vi/Pictures/sonny/Sonny_boy_\(54\).png fill
 
 # Example configuration:
 
-exec swayidle -w \
-      timeout 900 'swaylock' \
-      timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-      before-sleep 'swaylock'
+# exec swayidle -w \
+#      timeout 900 'swaylock' \
+#      timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#      before-sleep 'swaylock'
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -59,6 +60,9 @@ input 1739:0:Synaptics_TM3276-022 accel_profile adaptive
 
     # Start your launcher
     bindsym $mod+p exec $menu
+	
+	# Open browser
+	bindsym $mod+d exec $browser
 
 	# Screenshot utils
 	bindsym Print exec grimshot copy screen
