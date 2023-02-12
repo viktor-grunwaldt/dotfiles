@@ -1,0 +1,34 @@
+installed man and bat
+uncommented a line in /etc/sudoers
+exported editor as nvim
+connected to wifi through nmtui
+downloaded paru-git
+built paru, used paru to install paru-bin
+enabled colors in pacman, reversed order in paru
+created sway-run in usr bin
+copied sway config through usb drive
+set up syncthing
+set up keepass
+set up firefox
+set up github
+cloned dotfiles
+added config function
+set up eduroam
+set up vscode
+cloned wdp
+created python venv
+installed qt5 and gtk theme
+installed neovim plugins
+installed fish plugins
+installed tlp, powertop
+configured gtk, qt5
+configured custom firefox theme
+installed pw-volume, autotiling-rs
+fixed gtk settings https://github.com/swaywm/sway/wiki/GTK-3-settings-on-Wayland
+removed la.fish from /usr/share fish functions
+added ls=exa alias
+Enable paccache.timer to clear the package cache weekly
+If using an SSD, enable fstrim.timer to discard unused blocks periodically
+Install and configure reflector to frequently update the mirrorlist automatically
+Install intel-ucode or amd-ucode microcode depending on your CPU
+Install noto-fonts for basic font coverage

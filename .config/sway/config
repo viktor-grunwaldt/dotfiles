@@ -34,10 +34,13 @@ output * bg /home/vi/Pictures/sonny/Sonny_boy_\(54\).png fill
 # You can get the names of your inputs by running: swaymsg -t get_inputs
 # Read `man 5 sway-input` for more information about this section.
 
-
 input * {
-	xkb_layout "pl"
 	accel_profile flat
+}
+# two keyboard layouts, press both alts to toggle between them
+input "type:keyboard" {
+	xkb_layout "pl, de"
+	xkb_options grp:win_space_toggle
 }
 
 # I want my gaming mouse profile to be flat, however TrackPoint and TouchPad are terrible if flat
@@ -82,10 +85,13 @@ input 1739:0:Synaptics_TM3276-022 accel_profile adaptive
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec ~/.config/sway/swaypoweroff.sh
 
-    # Bind pipewire volume controls through pw-volume
-    bindsym XF86AudioRaiseVolume exec "pw-volume change +5%; pkill -RTMIN+8 waybar"
-    bindsym XF86AudioLowerVolume exec "pw-volume change -5%; pkill -RTMIN+8 waybar"
-    bindsym XF86AudioMute exec "pw-volume mute toggle; pkill -RTMIN+8 waybar
+    # Bind volume (TODO: use pipewire-pulseaudio)
+    # bindsym XF86AudioRaiseVolume exec "pw-volume change +5%; pkill -RTMIN+8 waybar"
+    # bindsym XF86AudioLowerVolume exec "pw-volume change -5%; pkill -RTMIN+8 waybar"
+    # bindsym XF86AudioMute exec "pw-volume mute toggle; pkill -RTMIN+8 waybar
+	
+	bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
+	bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
 
     # bind brightness control to move up/down by a factor of 2^(1/4) 
 	bindsym --locked XF86MonBrightnessUp exec light -T 1.19 
@@ -214,6 +220,7 @@ font Hack 13
 exec wl-clipboard
 exec mako
 exec autotiling-rs
+# exec keepassxc`
 # exec blueman-applet
 
 exec_always  ~/.config/sway/import_gtk-settings

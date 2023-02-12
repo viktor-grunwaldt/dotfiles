@@ -10,11 +10,11 @@
 call plug#begin(has('nvim') ? stdpath('data') . '/plugged' : '~/.vim/plugged')
 
 Plug 'fratajczak/one-monokai-vim'
-
+Plug 'catppuccin/nvim', {'as' : 'catppuccin'}
 call plug#end()
 
 :syntax on
-:colorscheme one-monokai
+:colorscheme catppuccin-macchiato
 
 :set encoding=UTF-8
 :set termguicolors
