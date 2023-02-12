@@ -5,8 +5,8 @@
     "modules-center": [""],
     "modules-right": [
 		"tray", 
-		"custom/pipewire",
 		"network",
+		"pulseaudio",
 		"cpu",
 		"memory",
 		"battery",
@@ -33,10 +33,10 @@
     },
     "battery": {
         "format": "{icon} {capacity}%",
-        "format-icons":{
-		"default": [" ", " ", " ", " ", " "],
-	    "charging": "⚡"
-	}
+        "format-icons": {
+			"default": ["", "", "", "", ""],
+			"charging": ["󰢜", "󰂇", "󰢝","󰢞", "󰂅"],
+		}
     },
     "clock#date": {
         "format": "{:%d.%m}"
@@ -55,5 +55,22 @@
 		"default": ["", "", ""]
         },
 
-    }
+    },
+	"pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-bluetooth": "{icon} {volume}% {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "婢",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "󰋎",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "󰖀", "󰕾"]
+        },
+        "on-click-right": "pavucontrol",
+	    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle"
+    },
 }

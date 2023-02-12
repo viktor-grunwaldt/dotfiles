@@ -95,6 +95,7 @@ window#waybar.firefox {
 #backlight,
 #network,
 #custom-pipewire,
+#pulseaudio,
 #custom-media,
 #tray,
 #mode,
@@ -131,7 +132,7 @@ window#waybar.empty #window {
 
 #battery.charging,
 #battery.plugged {
-    background-color: @yellow;
+/*    background-color: @yellow;*/
 }
 
 @keyframes blink {
@@ -156,13 +157,13 @@ label:focus {
 }
 
 #cpu {
-    background-color: #2ecc71;
+    background-color: @green; 
     /*    color: #000000;*/
 }
 
 #memory {
-    background-color: #9b59b6;
-    color: @crust;
+    background-color: @yellow;
+    /*color: @crust;*/
 }
 
 #disk {
@@ -173,20 +174,22 @@ label:focus {
     background-color: #90b1b1;
 }
 
-#network {
-    background-color: @sapphire;
-}
-
 #network.disconnected {
     background-color: @sky;
 }
 
+#pulseaudio,
 #custom-pipewire {
-    background-color: @green;
+    background-color: @teal;
 }
 
+#pulseaudio.muted,
 #custom-pipewire.muted {
     background-color: #90b1b1;
+}
+
+#network {
+    background-color: @sapphire;
 }
 
 #custom-media {
@@ -233,7 +236,7 @@ label:focus {
     background-color: #ecf0f1;
     color: #2d3436;
 }
-
+/*
 #mpd {
     background-color: #66cc99;
     color: #2a5c45;
@@ -250,7 +253,7 @@ label:focus {
 #mpd.paused {
     background-color: #51a37a;
 }
-
+*/
 #language {
     background: #00b093;
     color: #740864;
