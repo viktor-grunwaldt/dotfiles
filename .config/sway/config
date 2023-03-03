@@ -92,6 +92,7 @@ input 1739:0:Synaptics_TM3276-022 accel_profile adaptive
 	
 	bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
 	bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
+    bindsym XF86AudioMute exec exec pactl set-sink-mute @DEFAULT_SINK@ toggle
 
     # bind brightness control to move up/down by a factor of 2^(1/4) 
 	bindsym --locked XF86MonBrightnessUp exec light -T 1.19 

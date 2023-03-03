@@ -1,0 +1,14 @@
+[[language]]
+name = "python"
+auto-format = true
+formatter = { command = "black", args = ["--line-length", "120"]}
+
+[[language]]
+name = "c"
+config = { enable = true, lint = true, unstable = true }
+auto-format = true
+indent = { tab-width = 3, unit = " " }
+
+[[language]]
+name = "toml"
+auto-format = true

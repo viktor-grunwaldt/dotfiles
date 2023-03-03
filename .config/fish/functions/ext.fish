@@ -23,6 +23,8 @@ function ext
 				uncompress $argv
 			case '*.7z'
 				7z x $argv
+			case '*.xz'
+				xz -d $argv
 			case '*'
 				echo "'$argv' is not a valid file"
 		end
