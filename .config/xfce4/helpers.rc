@@ -1,0 +1,5 @@
+TerminalEmulator=alacritty
+TerminalEmulatorDismissed=true
+WebBrowser=firefox
+MailReader=thunderbird
+FileManager=thunar
