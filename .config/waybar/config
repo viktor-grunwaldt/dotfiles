@@ -36,7 +36,11 @@
         "format-icons": {
 			"default": ["", "", "", "", ""],
 			"charging": ["󰢜", "󰂇", "󰢝","󰢞", "󰂅"],
-		}
+		},
+        "states": {
+            "warning": 20,
+            "critical": 10
+        },
     },
     "clock#date": {
         "format": "{:%d.%m}"

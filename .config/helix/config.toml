@@ -1,9 +1,30 @@
-theme = "catppuccin_macchiato"
+theme = "catppuccin_macchiato_transparent"
 
 [editor]
 line-number = "relative"
+color-modes = true
+
+[keys.insert]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+
 [keys.normal]
+C-d = ["half_page_down", "align_view_center"]
+C-b = ["half_page_up", "align_view_center"]
+C-s = [":w"]
 esc = ["collapse_selection", "keep_primary_selection"]
+up = "no_op"
+down = "no_op"
+left = "no_op"
+right = "no_op"
+p = "paste_before"
+P = "paste_after"
+# test for project launcher
+# [keys.normal.space]
+# c = ":sh alacritty @ send-text --match 'title:^Terminal' cargo run \\\\n" 
+# t = ":sh alacritty @ send-text --match 'title:^Terminal' 'clear \\ncargo test \\n'"
 
 [editor.cursor-shape]
 insert = "bar"

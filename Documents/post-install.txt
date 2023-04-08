@@ -9,7 +9,7 @@ created sway-run in usr bin
 copied sway config through usb drive
 set up syncthing
 set up keepass
-set up firefox
+set up firefox (including chrome css)
 set up github
 cloned dotfiles
 added config function
@@ -32,3 +32,5 @@ If using an SSD, enable fstrim.timer to discard unused blocks periodically
 Install and configure reflector to frequently update the mirrorlist automatically
 Install intel-ucode or amd-ucode microcode depending on your CPU
 Install noto-fonts for basic font coverage
+added xfce helpers.rc and File Roller
+attempted configuring python-verify (fprintfd replacement for fingerprint scanner)
