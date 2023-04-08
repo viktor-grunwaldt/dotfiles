@@ -1,6 +1,7 @@
 # alias ls=exa
 abbr p sudo pacman -S
 abbr c clear
+abbr pytohn python
 # adds pip installed modules into path
 fish_add_path -p "$HOME/.local/bin"
 

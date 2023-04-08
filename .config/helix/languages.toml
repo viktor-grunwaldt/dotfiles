@@ -7,8 +7,13 @@ formatter = { command = "black", args = ["--line-length", "120"]}
 name = "c"
 config = { enable = true, lint = true, unstable = true }
 auto-format = true
-indent = { tab-width = 3, unit = " " }
+indent = { tab-width = 3, unit = "   " }
 
 [[language]]
 name = "toml"
 auto-format = true
+
+[[language]]
+name = "racket"
+auto-format = true
+indent = {tab-width = 2, unit = " "}

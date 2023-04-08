@@ -16,7 +16,7 @@ set $browser firefox
 set $menu wofi --show drun | xargs swaymsg exec --
 
 ### Output configuration
-output * bg /home/vi/Pictures/sonny/Sonny_boy_\(54\).png fill
+output * bg /home/vi/Pictures/wallpaper/wallpaper.png fill
 
 ### Idle configuration
 
@@ -85,25 +85,16 @@ input 1739:0:Synaptics_TM3276-022 accel_profile adaptive
     # Exit sway (logs you out of your Wayland session)
     bindsym $mod+Shift+e exec ~/.config/sway/swaypoweroff.sh
 
-    # Bind volume (TODO: use pipewire-pulseaudio)
-    # bindsym XF86AudioRaiseVolume exec "pw-volume change +5%; pkill -RTMIN+8 waybar"
-    # bindsym XF86AudioLowerVolume exec "pw-volume change -5%; pkill -RTMIN+8 waybar"
-    # bindsym XF86AudioMute exec "pw-volume mute toggle; pkill -RTMIN+8 waybar
-	
 	bindsym XF86AudioRaiseVolume exec pactl set-sink-volume @DEFAULT_SINK@ +2%
 	bindsym XF86AudioLowerVolume exec pactl set-sink-volume @DEFAULT_SINK@ -2%
     bindsym XF86AudioMute exec exec pactl set-sink-mute @DEFAULT_SINK@ toggle
+	bindsym XF86AudioMicMute exec pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
     # bind brightness control to move up/down by a factor of 2^(1/4) 
 	bindsym --locked XF86MonBrightnessUp exec light -T 1.19 
 	bindsym --locked XF86MonBrightnessDown exec light -T 0.84
 
-    #bindsym XF86MonBrightnessUp exec --no-startup-id xbacklight -inc 5
-    #bindsym XF86MonBrightnessDown exec --no-startup-id xbacklight -dec 5
-
-#
 # Moving around:
-#
     # Move your focus around
     bindsym $mod+$left focus left
     bindsym $mod+$down focus down
