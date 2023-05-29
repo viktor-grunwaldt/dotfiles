@@ -9,3 +9,6 @@
 	autocrlf = input
 [init]
 	defaultBranch = master
+[push]
+	default = simple
+	autoSetupRemote = true

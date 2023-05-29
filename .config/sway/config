@@ -14,7 +14,7 @@ set $right l
 set $term alacritty
 set $browser firefox
 set $menu wofi --show drun | xargs swaymsg exec --
-
+set $swaylock /home/vi/.config/sway/swaylock.sh
 ### Output configuration
 output * bg /home/vi/Pictures/wallpaper/wallpaper.png fill
 
@@ -22,10 +22,10 @@ output * bg /home/vi/Pictures/wallpaper/wallpaper.png fill
 
 # Example configuration:
 
-# exec swayidle -w \
-#      timeout 900 'swaylock' \
-#      timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-#      before-sleep 'swaylock'
+exec swayidle -w \
+     timeout 900 $swaylock \
+     timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+     before-sleep $swaylock
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
@@ -56,7 +56,7 @@ input 1739:0:Synaptics_TM3276-022 accel_profile adaptive
     bindsym $mod+Return exec $term
 
 	# Open this file in Alacritty+vim
-	bindsym $mod+shift+s exec "alacritty -e nvim /home/vi/.config/sway/config"
+	bindsym $mod+shift+s exec "alacritty -e helix /home/vi/.config/sway/config"
 
     # Kill focused window
     bindsym $mod+q kill
@@ -127,12 +127,12 @@ input 1739:0:Synaptics_TM3276-022 accel_profile adaptive
     bindsym $mod+5 workspace number 5
     bindsym $mod+6 workspace number 6
     # Move focused container to workspace and switch to workspace
-    bindsym $mod+Shift+1 move container to workspace number 1 
-    bindsym $mod+Shift+2 move container to workspace number 2
-    bindsym $mod+Shift+3 move container to workspace number 3
-    bindsym $mod+Shift+4 move container to workspace number 4
-    bindsym $mod+Shift+5 move container to workspace number 5
-    bindsym $mod+Shift+6 move container to workspace number 6
+    bindsym $mod+Shift+1 move container to workspace number 1; workspace number 1
+    bindsym $mod+Shift+2 move container to workspace number 2; workspace number 2
+    bindsym $mod+Shift+3 move container to workspace number 3; workspace number 3
+    bindsym $mod+Shift+4 move container to workspace number 4; workspace number 4
+    bindsym $mod+Shift+5 move container to workspace number 5; workspace number 5
+    bindsym $mod+Shift+6 move container to workspace number 6; workspace number 6
 #
 # Layout stuff:
 #

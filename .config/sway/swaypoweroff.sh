@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-op=$( echo -e " Poweroff\n Reboot\n Suspend\n Lock\n Logout" | wofi -i --dmenu | awk '{print tolower($2)}' )
+op=$( echo -e " Poweroff\n Reboot\n Suspend\n Lock\n Logout" | wofi -i --dmenu | awk '{print tolower($2)}' )
 
 case $op in 
         poweroff)
@@ -13,7 +13,7 @@ case $op in
                 loginctl $op
                 ;;
         lock)
-				swaylock
+				/home/vi/.config/sway/swaylock.sh
                 ;;
         logout)
                 swaymsg exit
