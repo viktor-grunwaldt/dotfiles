@@ -11,10 +11,10 @@ Then I came across this [blog post](https://www.atlassian.com/git/tutorials/dotf
 
 ## How to install?
 
-### Step 1 - create alias: \
+### Step 1 - create alias: 
 Paste this command into your shell's config file(eg. .bashrc or .zsh):
 `alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"`
-If you use fish like me type `function config`, then enter then paste `/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME` then enter, type end and enter. Ith should look like this: \
+If you use fish like me type `function config`, then enter then paste `/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME` then enter, type end and enter. Ith should look like this:
 
 ```fish
 function config 
