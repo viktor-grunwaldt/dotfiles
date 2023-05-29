@@ -24,7 +24,8 @@
   #TERM: alacritty
 
 import:
-  #  - ~/.config/alacritty/catppuccin-macchiato.yml
+  # - ~/.config/alacritty/catppuccin-macchiato.yml
+  # - ~/.config/alacritty/catppuccin-latte.yml
   - ~/.config/alacritty/catppuccin-mocha.yml
 window:
   # Window opacity

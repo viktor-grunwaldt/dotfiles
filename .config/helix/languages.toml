@@ -1,7 +1,32 @@
+use-grammars = { only = [ 
+    "rust", 
+    "c", 
+    "cpp" , 
+    "racket", 
+    "py", 
+    "toml", 
+    "md",
+    "json",
+    "html",
+    "fish",
+    "gitignore"
+] }
+[[language]]
+name = "rust"
+
+[language.config.check]
+command = "clippy"
+
 [[language]]
 name = "python"
 auto-format = true
-formatter = { command = "black", args = ["--line-length", "120"]}
+# formatter = { command = "black", args = ["--line-length", "120"]}
+[language.formatter]
+command = "black"
+args = [
+    "-", # stdin
+    "--line-length=100",
+]
 
 [[language]]
 name = "c"
@@ -17,3 +42,4 @@ auto-format = true
 name = "racket"
 auto-format = true
 indent = {tab-width = 2, unit = " "}
+language-server = { command = "racket", args = ["-l", "racket-langserver"] }

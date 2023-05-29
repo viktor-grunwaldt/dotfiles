@@ -55,7 +55,7 @@
 	"format": "{icon} {percentage}%", 
         "signal": 8,
         "format-icons": {
-		"mute": "ﱝ",
+		"mute": "󰝟",
 		"default": ["", "", ""]
         },
 
@@ -63,8 +63,8 @@
 	"pulseaudio": {
         "format": "{icon} {volume}%",
         "format-bluetooth": "{icon} {volume}% {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "婢",
+        "format-bluetooth-muted": "󰝟 {icon} {format_source}",
+        "format-muted": "󰝟",
         "format-icons": {
             "headphone": "",
             "hands-free": "",

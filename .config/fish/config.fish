@@ -66,9 +66,9 @@ function repo-url -d "Open the current repo and branch on the website"
 end
 
 # set -xg ELEM  "/run/media/vik77/Elements"
-# set -xg VISUAL "nvim"
+# set -xg VISUAL "helix"
 # set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 # set -xg UWR "$HOME/Documents/uwr"
 # source /usr/share/doc/find-the-command/ftc.fish
 
-thefuck --alias | source
+# thefuck --alias | source
