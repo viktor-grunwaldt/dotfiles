@@ -4,6 +4,9 @@ theme = "catppuccin_macchiato_transparent"
 line-number = "relative"
 color-modes = true
 
+[editor.lsp]
+display-inlay-hints = true
+
 [keys.insert]
 up = "no_op"
 down = "no_op"

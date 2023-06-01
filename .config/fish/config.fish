@@ -2,6 +2,7 @@
 abbr p sudo pacman -S
 abbr c clear
 abbr pytohn python
+abbr tree "exa --tree"
 # adds pip installed modules into path
 fish_add_path -p "$HOME/.local/bin"
 
@@ -37,7 +38,7 @@ abbr gpum "git pull upstream master"
 # delete branch from github. follow with branch name
 abbr gpod "git push origin --delete"
 # show git status without untracked files
-abbr  gsu "git status -uno"
+abbr gsu "git status -uno"
 # commit -m
 abbr gcm "git commit -m"
 abbr gcv "git commit --verbose"
@@ -53,7 +54,8 @@ abbr grs "git shortlog -s -n --all --no-merges"
 # print sorted, human readable sizes of current directory
 abbr ls_size "du -xhla --max-depth 1 | sort -rh"
 abbr z zathura
-
+abbr zz "swaymsg layout stacking && zathura *.pdf &"
+abbr x "sxiv -ft *"
 function repo-url -d "Open the current repo and branch on the website"
   set url (git config --get remote.origin.url | sed 's/:/\//' | sed 's/git@/https:\/\//' | sed 's/\.git//')
   set branch (git rev-parse --abbrev-ref HEAD)
