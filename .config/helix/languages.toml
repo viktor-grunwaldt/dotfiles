@@ -11,11 +11,37 @@ use-grammars = { only = [
     "fish",
     "gitignore"
 ] }
+
+[[language]]
+name = "markdown"
+soft-wrap.enable = true
+
 [[language]]
 name = "rust"
+scope = "source.rust"
+injection-regex = "rust"
+file-types = ["rs"]
+roots = ["Cargo.toml", "Cargo.lock"]
+auto-format = true
+comment-token = "//"
+language-server = { command = "rust-analyzer" }
+indent = { tab-width = 4, unit = "	" }
 
-[language.config.check]
+[language.config]
+inlayHints.bindingModeHints.enable = false
+inlayHints.closingBraceHints.minLines = 10
+inlayHints.closureReturnTypeHints.enable = "with_block"
+inlayHints.discriminantHints.enable = "fieldless"
+inlayHints.lifetimeElisionHints.enable = "skip_trivial"
+inlayHints.typeHints.hideClosureInitialization = false
+
+# [language.config.check]
+# command = "clippy"
+
+# On older versions of Helix, try using [language.config.check] instead
+[language-server.rust-analyzer.config.check]
 command = "clippy"
+
 
 [[language]]
 name = "python"
