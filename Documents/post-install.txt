@@ -15,8 +15,6 @@ cloned dotfiles
 added config function
 set up eduroam
 set up vscode
-cloned wdp
-created python venv
 installed qt5 and gtk theme
 installed neovim plugins
 installed fish plugins

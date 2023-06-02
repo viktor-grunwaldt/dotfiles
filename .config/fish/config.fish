@@ -56,6 +56,7 @@ abbr ls_size "du -xhla --max-depth 1 | sort -rh"
 abbr z zathura
 abbr zz "swaymsg layout stacking && zathura *.pdf &"
 abbr x "sxiv -ft *"
+abbr readme "pandoc -t pdf README.md | zathura -"
 function repo-url -d "Open the current repo and branch on the website"
   set url (git config --get remote.origin.url | sed 's/:/\//' | sed 's/git@/https:\/\//' | sed 's/\.git//')
   set branch (git rev-parse --abbrev-ref HEAD)
