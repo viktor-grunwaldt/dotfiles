@@ -31,6 +31,17 @@ colors() {
 	done
 }
 
+# HOW TO MAKE BASH IGNORE CASE WHEN AUTO COMPLETING
+
+# # If ~/.inputrc doesn't exist yet: First include the original /etc/inputrc
+# # so it won't get overriden
+# if [ ! -a ~/.inputrc ]; then echo '$include /etc/inputrc' > ~/.inputrc; fi
+# # Add shell-option to ~/.inputrc to enable case-insensitive tab completion
+# echo 'set completion-ignore-case On' >> ~/.inputrc
+
+# # to make changes systemwide:
+# echo 'set completion-ignore-case On' | sudo tee -a /etc/inputrc
+
 [ -r /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 
 # Change the window title of X terminals
@@ -76,6 +87,7 @@ if ${use_color} ; then
 	fi
 
 	alias ls='ls --color=auto'
+	alias la='ls --color=auto -l -a'
 	alias grep='grep --colour=auto'
 	alias egrep='egrep --colour=auto'
 	alias fgrep='fgrep --colour=auto'
@@ -116,7 +128,7 @@ shopt -s histappend
 #
 # # ex - archive extractor
 # # usage: ex <file>
-ex ()
+ext ()
 {
   if [ -f $1 ] ; then
     case $1 in
@@ -136,10 +148,12 @@ ex ()
   else
     echo "'$1' is not a valid file"
   fi
+}
 man () 
 {
     local width=$(tput cols)
     [ $width -gt $MANWIDTH ] && width=$MANWIDTH
     env MANWIDTH=$width \
     man "$@"
-}}
+}
+

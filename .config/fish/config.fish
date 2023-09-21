@@ -1,7 +1,6 @@
 # alias ls=exa
 abbr p sudo pacman -S
 abbr c clear
-abbr pytohn python
 abbr tree "exa --tree"
 # adds pip installed modules into path
 fish_add_path -p "$HOME/.local/bin"
@@ -54,9 +53,17 @@ abbr grs "git shortlog -s -n --all --no-merges"
 # print sorted, human readable sizes of current directory
 abbr ls_size "du -xhla --max-depth 1 | sort -rh"
 abbr z zathura
-abbr zz "swaymsg layout stacking && zathura *.pdf &"
+abbr zz "swaymsg layout stacking && zathura *.pdf && swaymsg layout toggle split"
+abbr mm "swaymsg layout stacking && mpv . && swaymsg layout toggle split"
+
 abbr x "sxiv -ft *"
 abbr readme "pandoc -t pdf README.md | zathura -"
+
+abbr py python
+# typos
+abbr pytohn python
+abbr dc cd
+
 function repo-url -d "Open the current repo and branch on the website"
   set url (git config --get remote.origin.url | sed 's/:/\//' | sed 's/git@/https:\/\//' | sed 's/\.git//')
   set branch (git rev-parse --abbrev-ref HEAD)

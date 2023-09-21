@@ -14,5 +14,6 @@
     "y": 0,
     "width": 1916,
     "height": 1032
-  }
+  },
+  "enableHardwareAcceleration": true
 }

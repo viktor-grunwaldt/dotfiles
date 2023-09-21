@@ -15,7 +15,12 @@ use-grammars = { only = [
 [[language]]
 name = "markdown"
 soft-wrap.enable = true
-
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
 [[language]]
 name = "rust"
 scope = "source.rust"
@@ -69,3 +74,9 @@ name = "racket"
 auto-format = true
 indent = {tab-width = 2, unit = " "}
 language-server = { command = "racket", args = ["-l", "racket-langserver"] }
+
+[[language]]
+name = "javascript"
+auto-format = true
+indent = {tab-width = 2, unit = " "}
+
