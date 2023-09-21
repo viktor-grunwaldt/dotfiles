@@ -14,8 +14,8 @@ left = "no_op"
 right = "no_op"
 
 [keys.normal]
-C-d = ["half_page_down", "align_view_center"]
-C-b = ["half_page_up", "align_view_center"]
+# C-d = ["half_page_down", "align_view_center"]
+# C-b = ["half_page_up", "align_view_center"]
 C-s = [":w"]
 esc = ["collapse_selection", "keep_primary_selection"]
 up = "no_op"

@@ -1,0 +1,20 @@
+[Default Applications]
+x-scheme-handler/mailto=userapp-Thunderbird-RVEYY1.desktop
+message/rfc822=userapp-Thunderbird-RVEYY1.desktop
+x-scheme-handler/mid=userapp-Thunderbird-RVEYY1.desktop
+x-scheme-handler/gitkraken=GitKraken.desktop
+text/html=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/about=firefox.desktop
+x-scheme-handler/unknown=firefox.desktop
+
+[Added Associations]
+x-scheme-handler/mailto=userapp-Thunderbird-RVEYY1.desktop;
+x-scheme-handler/mid=userapp-Thunderbird-RVEYY1.desktop;
+text/plain=leafpad.desktop;drracket.desktop;code.desktop;geany.desktop;
+application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;firefox.desktop;
+application/json=leafpad.desktop;
+text/x-python=code.desktop;
+text/x-csrc=leafpad.desktop;
+text/x-python3=leafpad.desktop;

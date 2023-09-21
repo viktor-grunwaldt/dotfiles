@@ -17,11 +17,10 @@ set $menu wofi --show drun | xargs swaymsg exec --
 set $swaylock $HOME/.config/sway/swaylock.sh
 ### Output configuration
 
-# set $wallpapers_path $HOME/Pictures/sonny
-# set $wall find $wallpapers_path -type f | shuf -n 1 
-# output * bg $wall fill
-
-output * bg $HOME/Pictures/wallpaper/wallpaper.png fill
+set $wallpapers_path $HOME/Pictures/sonny
+set $wall `find $wallpapers_path -type f | shuf -n 1`
+output * bg $wall fill
+# output * bg $HOME/Pictures/wallpaper/wallpaper.png fill
 
 ### Idle configuration
 
@@ -48,7 +47,7 @@ input "type:keyboard" {
 	xkb_options grp:win_space_toggle
 }
 
-# I want my gaming mouse profile to be flat, however TrackPoint and TouchPad are terrible if flat
+# I want my mouse profile to be flat, however TrackPoint and TouchPad are terrible if flat
 
 input 2:10:TPPS/2_IBM_TrackPoint accel_profile adaptive
 input 1739:0:Synaptics_TM3276-022 accel_profile adaptive
@@ -60,8 +59,8 @@ input 1739:0:Synaptics_TM3276-022 accel_profile adaptive
     # Start a terminal
     bindsym $mod+Return exec $term
 
-	# Open this file in Alacritty+vim
-	bindsym $mod+shift+s exec "alacritty -e helix $HOME/.config/sway/config"
+	# Open this file in terminal+helix
+	bindsym $mod+shift+s exec "$term -e helix $HOME/.config/sway/config"
 
     # Kill focused window
     bindsym $mod+q kill
@@ -131,13 +130,18 @@ input 1739:0:Synaptics_TM3276-022 accel_profile adaptive
     bindsym $mod+4 workspace number 4
     bindsym $mod+5 workspace number 5
     bindsym $mod+6 workspace number 6
-    # Move focused container to workspace and switch to workspace
+    
+	# Move focused container to workspace and switch to workspace
     bindsym $mod+Shift+1 move container to workspace number 1; workspace number 1
     bindsym $mod+Shift+2 move container to workspace number 2; workspace number 2
     bindsym $mod+Shift+3 move container to workspace number 3; workspace number 3
     bindsym $mod+Shift+4 move container to workspace number 4; workspace number 4
     bindsym $mod+Shift+5 move container to workspace number 5; workspace number 5
     bindsym $mod+Shift+6 move container to workspace number 6; workspace number 6
+
+	# Move Discord to the 4th workspace
+	assign [class="discord"] workspace number 4
+
 #
 # Layout stuff:
 #
@@ -209,6 +213,8 @@ bar {
 include /etc/sway/config.d/*
 default_border pixel
 client.focused #cba6f7 #cba6f7 #000000 #cba6f7
+
+# gaps settings
 gaps outer 0
 gaps inner 4
 smart_gaps on
