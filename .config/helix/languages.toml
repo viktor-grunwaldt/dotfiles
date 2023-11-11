@@ -2,14 +2,14 @@ use-grammars = { only = [
     "rust", 
     "c", 
     "cpp" , 
-    "racket", 
     "py", 
     "toml", 
     "md",
     "json",
     "html",
     "fish",
-    "gitignore"
+    "gitignore",
+    "go"
 ] }
 
 [[language]]
@@ -21,6 +21,8 @@ soft-wrap.enable = true
 '[' = ']'
 '"' = '"'
 "'" = "'"
+"`" = "`"
+
 [[language]]
 name = "rust"
 scope = "source.rust"
@@ -29,19 +31,15 @@ file-types = ["rs"]
 roots = ["Cargo.toml", "Cargo.lock"]
 auto-format = true
 comment-token = "//"
-language-server = { command = "rust-analyzer" }
 indent = { tab-width = 4, unit = "	" }
 
-[language.config]
+[language-server.rust-analyzer.config]
 inlayHints.bindingModeHints.enable = false
 inlayHints.closingBraceHints.minLines = 10
 inlayHints.closureReturnTypeHints.enable = "with_block"
 inlayHints.discriminantHints.enable = "fieldless"
 inlayHints.lifetimeElisionHints.enable = "skip_trivial"
 inlayHints.typeHints.hideClosureInitialization = false
-
-# [language.config.check]
-# command = "clippy"
 
 # On older versions of Helix, try using [language.config.check] instead
 [language-server.rust-analyzer.config.check]
@@ -51,7 +49,6 @@ command = "clippy"
 [[language]]
 name = "python"
 auto-format = true
-# formatter = { command = "black", args = ["--line-length", "120"]}
 [language.formatter]
 command = "black"
 args = [
@@ -61,22 +58,25 @@ args = [
 
 [[language]]
 name = "c"
-config = { enable = true, lint = true, unstable = true }
+# config = { enable = true, lint = true, unstable = true }
 auto-format = true
 indent = { tab-width = 3, unit = "   " }
+[language-server.clangd.config]
+lint = "true"
+unstable = "true"
 
 [[language]]
 name = "toml"
 auto-format = true
 
 [[language]]
-name = "racket"
-auto-format = true
-indent = {tab-width = 2, unit = " "}
-language-server = { command = "racket", args = ["-l", "racket-langserver"] }
-
-[[language]]
 name = "javascript"
 auto-format = true
 indent = {tab-width = 2, unit = " "}
+[language-server.typescript-language-server.config]
+display-inlay-hints = false
 
+[[language]]
+name = "go"
+auto-format = true
+formatter = {command = "goimport"}
