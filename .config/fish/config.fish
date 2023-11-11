@@ -1,7 +1,6 @@
-# alias ls=exa
 abbr p sudo pacman -S
-abbr c clear
-abbr tree "exa --tree"
+abbr tree "eza --tree"
+abbr uwr "cd $HOME/Documents/UWR"
 # adds pip installed modules into path
 fish_add_path -p "$HOME/.local/bin"
 
@@ -53,17 +52,18 @@ abbr grs "git shortlog -s -n --all --no-merges"
 # print sorted, human readable sizes of current directory
 abbr ls_size "du -xhla --max-depth 1 | sort -rh"
 abbr z zathura
+abbr z. "zathura *.pdf &"
 abbr zz "swaymsg layout stacking && zathura *.pdf && swaymsg layout toggle split"
 abbr mm "swaymsg layout stacking && mpv . && swaymsg layout toggle split"
 
 abbr x "sxiv -ft *"
 abbr readme "pandoc -t pdf README.md | zathura -"
-
+abbr confed "find ~/.config/ -type f | fzf | xargs $VISUAL"
 abbr py python
 # typos
 abbr pytohn python
 abbr dc cd
-
+abbr cd.. "cd .."
 function repo-url -d "Open the current repo and branch on the website"
   set url (git config --get remote.origin.url | sed 's/:/\//' | sed 's/git@/https:\/\//' | sed 's/\.git//')
   set branch (git rev-parse --abbrev-ref HEAD)
@@ -75,10 +75,5 @@ function repo-url -d "Open the current repo and branch on the website"
   end
 end
 
-# set -xg ELEM  "/run/media/vik77/Elements"
-# set -xg VISUAL "helix"
-# set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
-# set -xg UWR "$HOME/Documents/uwr"
-# source /usr/share/doc/find-the-command/ftc.fish
 
 # thefuck --alias | source
