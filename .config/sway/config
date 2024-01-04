@@ -41,7 +41,10 @@ exec swayidle -w \
 input * {
 	accel_profile flat
 }
-# two keyboard layouts, press both alts to toggle between them
+# two keyboard layouts, 
+# don't press both alts to toggle between them - every combination that works with altGr
+# breaks the key to use in other ways, (for example to instert ęą - you'd normally use altGr + ea)
+# however those combinations were being blocked
 input "type:keyboard" {
 	xkb_layout "pl, de"
 	xkb_options grp:win_space_toggle
@@ -227,36 +230,10 @@ exec autotiling-rs
 # exec blueman-applet
 
 exec_always  ~/.config/sway/import_gtk-settings
-# Porting GTK settings, Qt is handled by qt5ct
-# set $gnome-schema org.gnome.desktop.interface
-# exec_always {
-#     gsettings set $gnome-schema gtk-theme 'Catppuccin-Mocha-Standard-Mauve-Dark'
-#     gsettings set $gnome-schema icon-theme 'Papirus-Dark'
-#     gsettings set $gnome-schema cursor-theme 'Breeze_Snow'
-#     gsettings set $gnome-schema cursor-size 24
-#     gsettings set $gnome-schema font-antialiasing 'rgba'
-#     gsettings set $gnome-schema font-hinting 'full'
-#     gsettings set $gnome-schema font-rgba-order 'rgb'
-# 	gsettings set $gnome-schema color-scheme 'prefer-dark'
-# }
 
-exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
-
-# exec_always {
-#   gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Darker'
-#   gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark'
-#   gsettings set org.gnome.desktop.interface cursor-theme 'Breeze'
-#   gsettings set org.gnome.desktop.interface font-name 'Roboto Slab 10'
-#}
-# stuff to consider when using sway:
-# in order for some apps to go into dark mode create/add
-# [Settings]
-# gtk-application-prefer-dark-theme=true
-# gsettings set org.gnome.desktop.interface gtk-theme 'Arc-Darker'  
-# gsettings set org.gnome.desktop.interface icon-theme 'Papirus-Dark' 
-# to ~/.config/gtk-3.0/settings.ini
-#
-# as for some other apps "use qt5ct"
+# one year later I finally get what this line does
+# exec_always /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec_always /usr/bin/lxpolkit
 
 # cursor
 seat seat0 xcursor_theme Breeze_Snow 

@@ -9,7 +9,9 @@ use-grammars = { only = [
     "html",
     "fish",
     "gitignore",
-    "go"
+    "js",
+    "ts",
+    "lua"
 ] }
 
 [[language]]
@@ -26,11 +28,7 @@ soft-wrap.enable = true
 [[language]]
 name = "rust"
 scope = "source.rust"
-injection-regex = "rust"
-file-types = ["rs"]
 roots = ["Cargo.toml", "Cargo.lock"]
-auto-format = true
-comment-token = "//"
 indent = { tab-width = 4, unit = "	" }
 
 [language-server.rust-analyzer.config]
@@ -45,38 +43,45 @@ inlayHints.typeHints.hideClosureInitialization = false
 [language-server.rust-analyzer.config.check]
 command = "clippy"
 
-
 [[language]]
 name = "python"
-auto-format = true
-[language.formatter]
-command = "black"
-args = [
-    "-", # stdin
-    "--line-length=100",
-]
+auto-format = true # for some obscure reason format on save is disabled
+roots = ["pyproject.toml"]
+language-servers = ["pyright", "ruff"]
+
+[language-server.pyright]
+command = "pyright-langserver"
+args = ["--stdio"]
+
+[language-server.pyright.config.python.analysis]
+typeCheckingMode = "basic"
+
+[language-server.ruff]
+command = "ruff-lsp"
+config = { settings = { run = "onSave" } }
+
 
 [[language]]
 name = "c"
 # config = { enable = true, lint = true, unstable = true }
-auto-format = true
-indent = { tab-width = 3, unit = "   " }
+# indent = { tab-width = 4, unit = "   " }
 [language-server.clangd.config]
 lint = "true"
 unstable = "true"
 
 [[language]]
 name = "toml"
-auto-format = true
 
 [[language]]
 name = "javascript"
-auto-format = true
-indent = {tab-width = 2, unit = " "}
-[language-server.typescript-language-server.config]
-display-inlay-hints = false
+indent = {tab-width = 2, unit = "  "}
+# [language-server.typescript-language-server.config]
 
 [[language]]
-name = "go"
-auto-format = true
-formatter = {command = "goimport"}
+name = "typescript"
+indent = {tab-width = 2, unit = "  "}
+# [language-server.typescript-language-server.config]
+
+[[language]]
+name = "lua"
+indent = {tab-width =4, unit = "    "}
