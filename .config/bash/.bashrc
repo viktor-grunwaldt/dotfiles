@@ -1,9 +1,11 @@
 #
-# ~/.bashrc
+# ~/.config/bash/.bashrc
 #
 
 [[ $- != *i* ]] && return
 
+# move history to config folder
+export HISTFILE="~/.config/.bash_history"
 colors() {
 	local fgc bgc vals seq0
 

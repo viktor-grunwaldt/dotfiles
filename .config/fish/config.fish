@@ -59,6 +59,7 @@ abbr mm "swaymsg layout stacking && mpv . && swaymsg layout toggle split"
 abbr x "sxiv -ft *"
 abbr readme "pandoc -t pdf README.md | zathura -"
 abbr confed "find ~/.config/ -type f | fzf | xargs $VISUAL"
+abbr npm pnpm
 abbr py python
 # typos
 abbr pytohn python

@@ -1,0 +1,14 @@
+import = ["/home/vi/.config/alacritty/catppuccin-mocha.toml"]
+
+[font]
+size = 14.0
+
+[font.normal]
+family = "Hack Nerd Font Mono"
+
+[window]
+dynamic_title = true
+opacity = 0.95
+startup_mode = "Maximized"
+title = "Alacritty"
+# "window.decorations_theme_variant" = "dark"
