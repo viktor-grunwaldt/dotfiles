@@ -3,8 +3,10 @@ function ext
         	switch $argv
                 	case '*.tar.bz2'
 				tar xjf $argv
+			case '*.tar.xz'
+				tar xf $argv --one-top-level
 			case '*.tar.gz'
-				tar xzf $argv
+				tar xzf $argv --one-top-level
 			case '*.bz2'
 				bunzip2 $argv
 			case '*.rar'

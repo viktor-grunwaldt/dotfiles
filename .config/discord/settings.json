@@ -1,6 +1,6 @@
 {
   "SKIP_HOST_UPDATE": true,
-  "IS_MAXIMIZED": false,
+  "IS_MAXIMIZED": true,
   "IS_MINIMIZED": false,
   "openasar": {
     "setup": true,
@@ -12,8 +12,9 @@
   "WINDOW_BOUNDS": {
     "x": 0,
     "y": 0,
-    "width": 1270,
-    "height": 1384
+    "width": 1916,
+    "height": 1032
   },
-  "enableHardwareAcceleration": true
+  "enableHardwareAcceleration": true,
+  "chromiumSwitches": {}
 }

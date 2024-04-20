@@ -19,8 +19,10 @@ set $swaylock $HOME/.config/sway/swaylock.sh
 
 set $wallpapers_path $HOME/Pictures/sonny
 set $wall `find $wallpapers_path -type f | shuf -n 1`
-output * bg $wall fill
-# output * bg $HOME/Pictures/wallpaper/wallpaper.png fill
+# laptop display (FHD)
+output eDP-1 bg $wall fill
+# external monitor via USB-C4 (QHD)
+output DP-1 bg $HOME/.config/sway/cat.svg fill
 
 ### Idle configuration
 
@@ -236,5 +238,6 @@ exec_always  ~/.config/sway/import_gtk-settings
 exec_always /usr/bin/lxpolkit
 
 # cursor
-seat seat0 xcursor_theme Breeze_Snow 
+# cursor set via lxapprearence
+# seat seat0 xcursor_theme Breeze_Snow 
 

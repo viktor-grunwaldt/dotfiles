@@ -23,7 +23,7 @@ soft-wrap.enable = true
 '[' = ']'
 '"' = '"'
 "'" = "'"
-"`" = "`"
+# "```" = "```"
 
 [[language]]
 name = "rust"
@@ -69,6 +69,11 @@ name = "c"
 lint = "true"
 unstable = "true"
 
+# [[language]]
+# name = "cpp"
+# config = { enable = true, lint = true, unstable = true }
+# indent = { tab-width = 4, unit = "   " }
+
 [[language]]
 name = "toml"
 
@@ -85,3 +90,4 @@ indent = {tab-width = 2, unit = "  "}
 [[language]]
 name = "lua"
 indent = {tab-width =4, unit = "    "}
+
