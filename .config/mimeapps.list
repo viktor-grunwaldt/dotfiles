@@ -11,15 +11,18 @@ x-scheme-handler/unknown=firefox.desktop
 application/pdf=org.pwmt.zathura.desktop
 image/jpeg=sxiv.desktop
 image/png=sxiv.desktop
+application/x-zerosize=leafpad.desktop
+text/plain=org.xfce.mousepad.desktop
 
 [Added Associations]
 x-scheme-handler/mailto=userapp-Thunderbird-RVEYY1.desktop;
 x-scheme-handler/mid=userapp-Thunderbird-RVEYY1.desktop;
-text/plain=leafpad.desktop;drracket.desktop;code.desktop;geany.desktop;
+text/plain=leafpad.desktop;drracket.desktop;code.desktop;geany.desktop;org.xfce.mousepad.desktop;
 application/pdf=org.pwmt.zathura-pdf-mupdf.desktop;firefox.desktop;
 application/json=leafpad.desktop;
-text/x-python=code.desktop;
+text/x-python=leafpad.desktop;helix.desktop;code.desktop;
 text/x-csrc=leafpad.desktop;
 text/x-python3=leafpad.desktop;
 image/jpeg=sxiv.desktop;
 image/png=sxiv.desktop;
+application/x-zerosize=leafpad.desktop;
