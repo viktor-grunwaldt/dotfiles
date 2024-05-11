@@ -28,10 +28,10 @@ output DP-1 bg $HOME/.config/sway/cat.svg fill
 
 # Example configuration:
 
-exec swayidle -w \
-     timeout 900 $swaylock \
-     timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
-     before-sleep $swaylock
+# exec swayidle -w \
+#      timeout 900 $swaylock \
+#      timeout 1200 'swaymsg "output * dpms off"' resume 'swaymsg "output * dpms on"' \
+#      before-sleep $swaylock
 
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when

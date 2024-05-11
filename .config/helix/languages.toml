@@ -11,7 +11,8 @@ use-grammars = { only = [
     "gitignore",
     "js",
     "ts",
-    "lua"
+    "lua",
+    "ruby"
 ] }
 
 [[language]]
@@ -91,3 +92,17 @@ indent = {tab-width = 2, unit = "  "}
 name = "lua"
 indent = {tab-width =4, unit = "    "}
 
+[[language]]
+name = "ruby"
+language-servers = ["rubocop", { name = "solargraph", except-features = [ "format", "diagnostics" ] }]
+auto-format = true
+
+[language-server.solargraph]
+# command = "/Users/danillos/.rbenv/shims/solargraph"
+args = ["stdio"]
+config = { diagnostics = false, formatting = false }
+
+[language-server.rubocop]
+command = "rubocop"
+args = ["--lsp", "--stderr", "--fail-level", "fatal"]
+timeout = 3
