@@ -2,8 +2,9 @@ abbr p sudo pacman -S
 abbr tree "eza --tree"
 abbr uwr "cd $HOME/Documents/UWR"
 # adds pip installed modules into path
-fish_add_path -p "$HOME/.local/bin"
-
+fish_add_path -a "$HOME/.local/bin"
+# ruby modules
+# type -q gem && fish_add_path -a "$(gem env user_gemhome)/bin" || true
 # tj git aliases
 abbr gd "git diff -M"
 abbr ga "git add"
@@ -23,9 +24,11 @@ abbr gcp "git cherry-pick"
 abbr gl "git log --pretty=format:\"%Cgreen%h%Creset - %Cblue%an%Creset @ %ar : %s\""
 abbr gl2 "git log --pretty='format:%Cgreen%h%Creset %an - %s' --graph"
 abbr glv "git log --stat"
-abbr gpom "git pull origin master"
 abbr gcl "git clone"
 abbr gclp "git clone (wl-paste)"
+
+# pull from origin; try to rebase
+abbr gpom "git pull origin master --rebase"
 
 # remove files that are not under version control
 abbr gcf "git clean -fd"
@@ -65,16 +68,7 @@ abbr py python
 abbr pytohn python
 abbr dc cd
 abbr cd.. "cd .."
-function repo-url -d "Open the current repo and branch on the website"
-  set url (git config --get remote.origin.url | sed 's/:/\//' | sed 's/git@/https:\/\//' | sed 's/\.git//')
-  set branch (git rev-parse --abbrev-ref HEAD)
-  switch $url
-    case "*bitbucket"
-      echo "$url/branch/$branch"
-    case "*"
-      echo "$url/tree/$branch"
-  end
-end
 
 
 # thefuck --alias | source
+source /opt/asdf-vm/asdf.fish
