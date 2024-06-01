@@ -65,7 +65,7 @@ input 1739:0:Synaptics_TM3276-022 accel_profile adaptive
     bindsym $mod+Return exec $term
 
 	# Open this file in terminal+helix
-	bindsym $mod+shift+s exec "$term -e helix $HOME/.config/sway/config"
+	bindsym $mod+shift+s exec "$term -e $VISUAL $HOME/.config/sway/config"
 
     # Kill focused window
     bindsym $mod+q kill
