@@ -3,6 +3,10 @@
 dotfiles managed using a git bare repository, synced with github
 using an alias (or rather a fish function) to easily edit and update when I need from commandline.
 
+## Pretty picture:
+
+![Screenshot](./Pictures/unixporn.png)
+
 ## Why git bare?
 
 After I nuked my install (happens) I thought It's a good idea to store my configs somewhere safe.
