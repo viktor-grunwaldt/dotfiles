@@ -1,4 +1,5 @@
 theme = "catppuccin_macchiato_transparent"
+# theme = "catppuccin_latte"
 
 [editor]
 line-number = "relative"

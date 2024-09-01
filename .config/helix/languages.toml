@@ -58,7 +58,8 @@ args = ["--stdio"]
 typeCheckingMode = "basic"
 
 [language-server.ruff]
-command = "ruff-lsp"
+command = "ruff"
+args = ["server"]
 config = { settings = { run = "onSave" } }
 
 

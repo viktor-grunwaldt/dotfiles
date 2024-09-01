@@ -1,4 +1,5 @@
 import = ["/home/vi/.config/alacritty/catppuccin-mocha.toml"]
+# import = ["/home/vi/.config/alacritty/catppuccin-latte.toml"]
 
 [font]
 size = 14.0

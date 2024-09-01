@@ -68,7 +68,3 @@ abbr py python
 abbr pytohn python
 abbr dc cd
 abbr cd.. "cd .."
-
-
-# thefuck --alias | source
-source /opt/asdf-vm/asdf.fish
