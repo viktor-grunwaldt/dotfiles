@@ -2,7 +2,7 @@
 	name = Viktor Grünwaldt
 	email = v.gruenwaldt@protonmail.com
 [pull]
-	rebase = false
+	rebase = true
 [color]
 	ui = auto
 [core]
@@ -12,3 +12,10 @@
 [push]
 	default = simple
 	autoSetupRemote = true
+[merge]
+	conflictstyle = diff3
+[help]
+	autocorrect = prompt
+[diff]
+	colorMoved = default
+	algorithm = histogram
